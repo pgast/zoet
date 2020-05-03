@@ -1,0 +1,980 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html{
+  font-size: 10px;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", sans-serif;
+}
+
+/* ######################################################################## */
+/* LANDING PAGE */
+/* ######################################################################## */
+#landing {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#landing > * {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#landing .nav {
+  grid-row: 1 / 3;
+  grid-column: 1 / 7;
+}
+
+#landing main {
+  display: block;
+  grid-row: 3 / 13;
+  grid-column: 1 / 7;
+}
+
+#landing .vector-background {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#amarillo {
+  max-width: max-content;
+  max-height: max-content;
+}
+
+#rosa {
+  align-self: flex-end;
+  max-width: max-content;
+  max-height: max-content;
+}
+
+.intro-text {
+  top: 40%;
+  width: 40%;
+  z-index: 9;
+  color: black;
+  text-align: left;
+  margin-left: 10rem;
+  position: absolute;
+}
+
+.intro-text h1 {
+  font-size: 4rem;
+  color: #9bd6cd;
+  word-wrap: break-word;
+}
+
+.intro-text p {
+  margin-top: 1rem;
+}
+
+.boton-ordena {
+  width: 14rem;
+  padding: 1rem;
+  color: white;
+  margin-top: 4rem;
+  text-align: center;
+  background: black;
+  border-radius: 3rem;
+  border: 3px solid #69918b; 
+}
+
+.boton-ordena:hover {
+  color: black;
+  background: #9bd6cd;
+  border: 3px solid #9bd6cd;
+}
+
+#landing section {
+  grid-row: 1 / 13;
+  grid-column: 7 / 13;
+  background-size: cover;
+  background-position: center 70%;
+  background: url("../../assets/images/landingoptimized.jpg") no-repeat;
+}
+
+.mobile-main,
+#landing_servicios,
+#landing_productos {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  #landing {
+    display: grid;
+    height: 820px;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #landing section {
+    display: none !important;
+  }
+
+  #landing main {
+    grid-row: 1 / 5;
+    grid-column: 1 / 5; 
+  }
+
+  #landing_servicios {
+    display: flex;
+    grid-row: 5 / 8;
+    overflow: hidden;
+    grid-column: 1 / 3;
+    background-color: black;
+  }
+
+  #landing_productos {
+    display: flex;
+    grid-row: 5 / 8;
+    overflow: hidden;
+    grid-column: 3 / 5;
+    background-color: black;
+  }
+
+  #mobile-productos-img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-size: cover;
+    background-image: url("../../assets/images/zanahoria.jpg");
+  }
+
+  #mobile-servicios-img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-size: cover;
+    background-image: url("../../assets/images/entregas.jpg");
+  }
+
+  #landing_servicios h1 {
+    left: 14%;
+    z-index: 3;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+  }
+
+  #landing_productos h1 {
+    right: 10%;
+    z-index: 3;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+  }
+
+  .mobile-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    background-size: cover;
+    justify-content: flex-end;
+    background-position: center 100%;
+    background-image: url("../../assets/images/landingoptimized.jpg");
+  }
+
+  .mobile-main h1 {
+    text-align: left;
+    font-size: 2.7rem;
+    margin-left: 2rem;
+  }
+
+  .boton-ordena-mobile {
+    border: none;
+    align-self: center;
+  }
+
+  .vector-background {
+    display: none !important;
+  }
+
+  .intro-text {
+    display: none;
+  }
+}
+
+/* ######################################################################## */
+/* LANDING PAGE END */
+/* ######################################################################## */
+/* ######################################################################## */
+/* PRODUCTOS */
+/* ######################################################################## */
+#productos {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#productos > * {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#productos .nav{
+  grid-row: 1 / 3;
+  grid-column: 1 / 7;
+}
+
+#productos main {
+  display: flex;
+  grid-row: 3 / 13;
+  grid-column: 1 / 7;
+  align-content: center;
+  flex-direction: column;
+}
+
+.productos-text {
+  color: black;
+  text-align: left;
+  margin-left: 10rem;
+  margin-bottom: 13rem;
+}
+
+.productos-text h1 {
+  font-size: 4rem;
+  color: #9bd6cd;
+}
+
+.productos-text h3 {
+  font-size: 2.5rem;
+}
+
+#productos section {
+  display: block;
+  grid-row: 1 / 13;
+  grid-column: 7 / 13;
+}
+
+#productos .full-size-photos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 0px;
+  justify-content: space-between !important;
+}
+
+#productos .photo-row {
+  width: 100%;
+  height: 32%;
+  display: flex;
+  justify-content: center;
+}
+
+#productos .photo-row div:nth-child(even) {
+  margin-left: 1rem;
+}
+
+#productos .photo {
+  width: 50%;
+  height: 100%;
+  margin-left: 1rem;
+  background-size: cover;
+  transition: box-shadow .3s;
+}
+
+#productos .photo:hover {
+  box-shadow: 0 0 32px gray; 
+}
+
+.brownies {
+  background-position: center 66%;
+  background: url("../../assets/images/brownies.jpg");
+}
+
+.tripleChocolate {
+  background-position: center 25%;
+  background: url("../../assets/images/tripleChocolate.jpg");
+}
+
+.zanahoria {
+  background-position: center 80%;
+  background: url("../../assets/images/zanahoria.jpg");
+}
+
+.lemonCheesecake {
+  background-position: center 46%;
+  background: url("../../assets/images/lemonCheesecake.jpg");
+}
+
+.pistaccio {
+  background-position: center 80%;
+  background: url("../../assets/images/pistaccio.jpg");
+}
+
+.mango {
+  background-position: center 90%;
+  background: url("../../assets/images/mango.jpg");
+}
+
+#productos_info {
+  display: none;
+}
+
+.productos_carousel {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  #productos {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #productos .nav {
+    z-index: 33;
+    position: absolute;
+  }
+
+  #productos main {
+    display: none !important;
+  }
+
+  #productos section {
+    padding: 0;
+    grid-row: 1 / 8;
+    grid-column: 1 / 5; 
+    background: #d3d3d3;
+  }
+  
+  #productos_info {
+    display: flex;
+    padding: 3rem;
+    grid-row: 8 / 10;
+    grid-column: 1 / 5;
+    background: #9bd6cd;
+  }
+  
+  #productos_info > h1 {
+    font-size: 4rem;
+    text-align: left;
+  }
+  
+  #productos_info > p {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  #productos .full-size-photos {
+    display: none;
+  }
+}
+/* ######################################################################## */
+/* PRODUCTOS  END */
+/* ######################################################################## */
+/* ######################################################################## */
+/* SERVICIOS */
+/* ######################################################################## */
+#servicios {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#servicios > * {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#servicios .nav {
+  grid-row: 1 / 3;
+  grid-column: 1 / 7;
+}
+
+#servicios main {
+  display: flex;
+  grid-row: 3 / 13;
+  grid-column: 1 / 7;
+  align-content: center;
+  flex-direction: column;
+}
+
+.servicios-text {
+  height: 40%;
+  display: flex;
+  text-align: left;
+  margin-left: 5rem;
+  margin-bottom: 9rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.circle_text_row h1 {
+  font-size: 4rem;
+  margin-left: 2rem;
+}
+
+.servicios-text h3 {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+  margin-bottom: 3rem;
+}
+
+.white-text {
+  color: white;
+}
+
+.eventos-text {
+  cursor: pointer;
+  color: #9bd6cd;
+}
+
+.eventos-text:hover #circle {
+  display: block;
+  background-color: #9bd6cd;
+}
+
+.catering-text {
+  cursor: pointer;
+  color: #fbe289;
+}
+
+.catering-text:hover #circle {
+  display: block;
+  background-color: #fbe289;
+}
+
+.distribucion-text {
+  cursor: pointer;
+  color: #f28080;
+}
+
+.distribucion-text:hover #circle {
+  display: block;
+  background-color: #f28080;
+}
+
+.faded-text {
+  opacity: 0.4;
+  color: white;
+}
+
+.faded-text:hover {
+  opacity: 0.8;
+}
+
+#circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+}
+
+.circle_text_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#servicios section {
+  display: block;
+  grid-row: 1 / 13;
+  grid-column: 7 / 13;
+}
+
+.servicios-photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.servicios-img {
+  background-image: url("../../assets/images/lemonCheesecake.jpg");
+}
+
+.pedidos-img {
+  background-image: url("../../assets/images/roscadezanahoria.jpg");
+}
+
+.catering-img {
+  background-position: center 34%;
+  background-image: url("../../assets/images/catering.jpg");
+}
+
+.distribucion-img {
+  background-position: center 33%;
+  background-image: url("../../assets/images/entregas.jpg");
+}
+
+#servicios_info {
+  display: none;
+  grid-area: productos;
+}
+
+.carousel {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  #servicios {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #servicios .nav {
+    z-index: 33;
+    position: absolute;
+  }
+ 
+  #servicios main {
+    display: none !important;
+  }
+
+  #servicios section {
+    padding: 0;
+    grid-row: 1 / 8;
+    grid-column: 1 / 5; 
+  }
+  
+  #servicios_info {
+    display: flex;
+    padding: 3rem;
+    grid-row: 8 / 10;
+    grid-column: 1 / 5;
+  }
+  
+  #servicios_info > h1 {
+    font-size: 4rem;
+    text-align: left;
+  }
+  
+  #servicios_info > p {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .full-screen-services {
+    display: none;
+  }
+
+  .servicios-photo {
+    display: none;
+  }
+
+  
+  /*  CAROUSEL  */
+  .carousel {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: cover;
+  }
+  
+  .carousel-controls {
+    top: 0;
+    width: 100%;
+    height: 75%;
+    z-index: 23;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+  }
+  
+  .toggle-img-controls {
+    top: 55%;
+    width: 90%;
+    display: flex;
+    align-self: center;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .prev, .next {
+    color: white;
+    cursor: pointer;
+    font-size: 4rem;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+    border-radius: 3px 0 0 3px;
+  }
+
+  .dots {
+    bottom: 0;
+    width: 70%;
+    display: flex;
+    text-align: center;
+    align-self: center;
+    position: absolute;
+    justify-content: space-between;
+  }
+  .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid white;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: white;
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
+}
+/* ######################################################################## */
+/* SERVICIOS END */
+/* ######################################################################## */
+/* ######################################################################## */
+/* NAVBAR COMPONENT */
+/* ######################################################################## */
+.nav > div {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3rem 0 3rem;
+  justify-content: space-between;
+}
+
+.nav .links {
+  width: 60%;
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navLink {
+  color: black;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #9bd6cd;
+}
+
+.navLink-black {
+  color: black;
+  text-decoration: none;
+}
+
+.navLink-black:hover {
+  color: white;
+}
+
+.navLink-white {
+  color: white;
+  text-decoration: none;
+}
+
+.navLink-white:hover {
+  color: black;
+}
+
+.container {
+  display: none;
+}
+
+.insta {
+  height: 2.3rem;
+}
+
+.insta-black:hover {
+  filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(290deg) brightness(101%) contrast(104%);
+}
+
+.insta-white {
+  filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(290deg) brightness(101%) contrast(104%);
+}
+
+.insta-white:hover {
+  filter: none;
+}
+
+.insta-def:hover {
+  filter: invert(86%) sepia(9%) saturate(908%) hue-rotate(121deg) brightness(94%) contrast(88%);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  .nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 13rem;
+    position: relative;
+  }
+
+  .nav div {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .nav .links {
+    display: none;
+  }
+
+  .container {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    background-color: white;
+  }
+  
+  .change1 {
+    transform: rotate(-45deg) translate(-1px, 6px);
+  }
+    
+  .change3 {
+    transform: rotate(45deg) translate(-1px, -7px);
+  }
+
+  .mobile-menu {
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    background: #9bd6cd;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mobile-menu-links {
+    height: 50%;
+    display: flex;
+    font-size: 3rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-links > * {
+    color: black;
+    text-decoration: none;
+  }
+
+  .mobile-menu-links img{
+    height: 4rem;
+  }
+
+  .mobile-menu-header {
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin: 4rem 2rem 0 0;
+  }
+}
+/* ######################################################################## */
+/* NAVBAR COMPONENT END */
+/* ######################################################################## */
+/* ######################################################################## */
+/* ORDENA */
+/* ######################################################################## */
+#ordena {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#ordena > * {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#ordena .nav {
+  grid-row: 1 / 3;
+  grid-column: 1 / 7;
+  background: #9bd6cd;
+}
+
+#ordena main {
+  display: block;
+  grid-row: 3 / 13;
+  grid-column: 1 / 13;
+  background: #9bd6cd;
+}
+
+#empty {
+  grid-row: 1 / 3;
+  grid-column: 7 / 13;
+  background: #9bd6cd;
+}
+
+.form {
+  height: 100%;
+  width: 30rem;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form h3 {
+  font-size: 2.2rem;
+}
+
+.form form {
+  height: 60%;
+  width: 20rem;
+  display: flex;
+  text-align: left;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.form-text {
+  height: 20%;
+}
+
+.form-text hr {
+  margin: 0.4rem 0 0.4rem 0;
+  border: 0.1rem solid white;
+}
+
+.form-header {
+  display: flex;
+  height: 20rem;
+  flex-direction: column;
+  padding: 2rem 0 2rem 0;
+  justify-content: center;
+}
+
+.form div {
+  display: flex;
+  font-size: 1.8rem;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.form textarea,
+.form div select,
+.form div input {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #69918b; 
+}
+
+.boton-enviar {
+  width: 14rem;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 3rem;
+  background: #69918b;
+  border: 2px solid #69918b; 
+}
+
+.boton-enviar:hover {
+  color: white;
+  background: black;
+  border: 2px solid #69918b; 
+}
+  
+@media (max-width: 568px) {
+  #ordena {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #ordena main {
+    padding: 0;
+    display: flex;
+    grid-row: 1 / 10;
+    grid-column: 1 / 5; 
+    flex-direction: column;
+  }
+
+  .form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form form {
+    height: auto;
+  }
+
+  .form-header {
+    margin: 0;
+    height: auto;
+    margin-top: 4rem;
+  }
+  
+  #empty {
+    display: none;
+  }
+}
+/* ######################################################################## */
+/* ORDENA END */
+/* ######################################################################## */
